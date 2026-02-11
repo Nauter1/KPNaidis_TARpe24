@@ -6,6 +6,20 @@
     xmlns:local="clr-namespace:KPNaidis_TARpe24"
     Title="KPNaidis_TARpe24">
 
+    <Shell.TitleView>
+        <Label 
+            Text="Näidis"
+            FontFamily="Digital System 400"
+            FontSize="Title"
+            TextColor="DarkGoldenrod"
+            VerticalTextAlignment="Center"
+            VerticalOptions="Center"
+            HorizontalOptions="Start"
+            Padding="25,0,0,0"
+            HeightRequest="50"
+            />
+    </Shell.TitleView>
+    
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:StartPage}"
