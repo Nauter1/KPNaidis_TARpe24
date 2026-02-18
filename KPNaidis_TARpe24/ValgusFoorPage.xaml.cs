@@ -73,11 +73,13 @@ public partial class ValgusFoorPage : ContentPage
                 if (ona == true)
                 {
                     ona = false;
+                    palla.FadeTo(0.5, 150);
                     palla.Fill = Color.FromRgb(100, 100, 100);
                 }
                 else if (ona == false)
                 {
                     ona = true;
+                    palla.FadeTo(1, 150);
                     palla.Fill = Color.FromRgb(255, 0, 0);
                 }
             }
@@ -89,11 +91,13 @@ public partial class ValgusFoorPage : ContentPage
                 if (onb == true)
                 {
                     onb = false;
+                    pallb.FadeTo(0.5, 150);
                     pallb.Fill = Color.FromRgb(100, 100, 100);
                 }
                 else if (onb == false)
                 {
                     onb = true;
+                    pallb.FadeTo(1, 150);
                     pallb.Fill = Color.FromRgb(255, 255, 0);
                 }
             }
@@ -105,11 +109,13 @@ public partial class ValgusFoorPage : ContentPage
                 if (onc == true)
                 {
                     onc = false;
+                    pallc.FadeTo(0.5, 150);
                     pallc.Fill = Color.FromRgb(100, 100, 100);
                 }
                 else if (onc == false)
                 {
                     onc = true;
+                    pallc.FadeTo(1, 150);
                     pallc.Fill = Color.FromRgb(0, 255, 0);
                 }
             }
@@ -172,6 +178,9 @@ public partial class ValgusFoorPage : ContentPage
             if (seesvaljas == false)
             { 
             seesvaljas = true;
+            palla.FadeTo(0.5, 150);
+            pallb.FadeTo(0.5, 150);
+            pallc.FadeTo(0.5, 150);
             palla.Fill = Color.FromRgb(100, 100, 100);
             pallb.Fill = Color.FromRgb(100, 100, 100);
             pallc.Fill = Color.FromRgb(100, 100, 100);
@@ -197,6 +206,9 @@ public partial class ValgusFoorPage : ContentPage
                 ona = false;
                 onb = false;
                 onc = false;
+                palla.FadeTo(1, 150);
+                pallb.FadeTo(1, 150);
+                pallc.FadeTo(1, 150);
                 palla.Fill = Color.FromRgb(50, 50, 50);
                 pallb.Fill = Color.FromRgb(50, 50, 50);
                 pallc.Fill = Color.FromRgb(50, 50, 50);
