@@ -21,6 +21,21 @@ public partial class ValgusFoorPage : ContentPage
         TapGestureRecognizer tapa = new TapGestureRecognizer();
         TapGestureRecognizer tapb = new TapGestureRecognizer();
         TapGestureRecognizer tapc = new TapGestureRecognizer();
+        Grid ellipsiKonteinerA = new Grid
+        {
+            HorizontalOptions = LayoutOptions.Center,
+            VerticalOptions = LayoutOptions.Center
+        };
+        Grid ellipsiKonteinerB = new Grid
+        {
+            HorizontalOptions = LayoutOptions.Center,
+            VerticalOptions = LayoutOptions.Center
+        };
+        Grid ellipsiKonteinerC = new Grid
+        {
+            HorizontalOptions = LayoutOptions.Center,
+            VerticalOptions = LayoutOptions.Center
+        };
         palla = new Ellipse
         {
             WidthRequest = 200,
@@ -110,13 +125,47 @@ public partial class ValgusFoorPage : ContentPage
             HeightRequest = 60,
             ZIndex = 1
         };
+        Label texta = new Label
+        {
+            Text = "Seisa!",
+            HorizontalOptions = LayoutOptions.Center, // Keskele horisontaalselt
+            VerticalOptions = LayoutOptions.Center,   // Keskele vertikaalselt
+            TextColor = Colors.Black,
+            FontAttributes = FontAttributes.Bold
+        };
+        Label textb = new Label
+        {
+            Text = "Oota...",
+            HorizontalOptions = LayoutOptions.Center, // Keskele horisontaalselt
+            VerticalOptions = LayoutOptions.Center,   // Keskele vertikaalselt
+            TextColor = Colors.Black,
+            FontAttributes = FontAttributes.Bold
+        };
+        Label textc = new Label
+        {
+            Text = "Sõida!",
+            HorizontalOptions = LayoutOptions.Center, // Keskele horisontaalselt
+            VerticalOptions = LayoutOptions.Center,   // Keskele vertikaalselt
+            TextColor = Colors.Black,
+            FontAttributes = FontAttributes.Bold
+        };
         vsl = new VerticalStackLayout
         {
             Padding = 20,
             Spacing = 15,
-            Children = { palla, pallb, pallc, hsl },
+            Children = {},
             HorizontalOptions = LayoutOptions.Center
         };
+        ellipsiKonteinerA.Children.Add(palla);
+        ellipsiKonteinerA.Children.Add(texta);
+        ellipsiKonteinerB.Children.Add(pallb);
+        ellipsiKonteinerB.Children.Add(textb);
+        ellipsiKonteinerC.Children.Add(pallc);
+        ellipsiKonteinerC.Children.Add(textc);
+        vsl.Children.Add(ellipsiKonteinerA);
+        vsl.Children.Add(ellipsiKonteinerB);
+        vsl.Children.Add(ellipsiKonteinerC);
+        vsl.Children.Add(hsl);
         vsl.Add(nupp);
         nupp.Clicked += (sender, e) =>
         {
