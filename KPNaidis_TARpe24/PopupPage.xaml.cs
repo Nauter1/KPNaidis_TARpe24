@@ -1,9 +1,17 @@
+using Microsoft.Maui.Graphics.Text;
+
 namespace KPNaidis_TARpe24;
 
 public partial class PopupPage : ContentPage
 {
 	Button Query;
+    Button MathAddition;
+    Button MathSubtraction;
+    Button MathMultiplication;
+    Random rnd = new Random();
+
     string nimi;
+    string result;
     VerticalStackLayout vsl;
 	public PopupPage()
 	{
@@ -42,7 +50,7 @@ public partial class PopupPage : ContentPage
 
         Query = new Button
         {
-            Text = "Aktiveeri",
+            Text = "Sisesta Nimi..",
             FontSize = 36,
             FontFamily = "Digital System 400",
             BackgroundColor = Colors.LightGray,
@@ -52,11 +60,48 @@ public partial class PopupPage : ContentPage
             ZIndex = 1
         };
         Query.Clicked += QueryClicked;
+        MathAddition = new Button
+        {
+            Text = "Liitmine",
+            FontSize = 36,
+            FontFamily = "Digital System 400",
+            BackgroundColor = Colors.LightGray,
+            TextColor = Colors.Black,
+            CornerRadius = 10,
+            HeightRequest = 60,
+            ZIndex = 1
+        };
+        MathAddition.Clicked += MathAdditionClicked;
+        MathSubtraction = new Button
+        {
+            Text = "Lahutamine",
+            FontSize = 36,
+            FontFamily = "Digital System 400",
+            BackgroundColor = Colors.LightGray,
+            TextColor = Colors.Black,
+            CornerRadius = 10,
+            HeightRequest = 60,
+            ZIndex = 1
+        };
+        MathSubtraction.Clicked += MathSubtractionClicked;
+        MathMultiplication = new Button
+        {
+            Text = "Korrutamine",
+            FontSize = 36,
+            FontFamily = "Digital System 400",
+            BackgroundColor = Colors.LightGray,
+            TextColor = Colors.Black,
+            CornerRadius = 10,
+            HeightRequest = 60,
+            ZIndex = 1
+        };
+        MathMultiplication.Clicked += MathMultiplicationClicked;
+
         vsl = new VerticalStackLayout
         {
             Padding = 20,
             Spacing = 15,
-            Children = { Query, alertButton, alertYesNoButton, alertListButton, alertQuestButton },
+            Children = { Query, MathAddition, MathSubtraction, MathMultiplication , alertButton, alertYesNoButton, alertListButton, alertQuestButton },
             HorizontalOptions = LayoutOptions.Center
         };
         Content = vsl;
@@ -85,7 +130,91 @@ public partial class PopupPage : ContentPage
     }
     private async void QueryClicked(object sender, EventArgs e)
     {
-        string result = await DisplayPromptAsync("Küsimus", "Mis on sinu nimi?", placeholder: "Sisesta nimi");
-        await DisplayAlertAsync("Teade", "Tere " + result + "!", "OK");
+        nimi = await DisplayPromptAsync("Küsimus", "Mis on sinu nimi?", placeholder: "Sisesta nimi");
+        await DisplayAlertAsync("Teade", "Tere " + nimi + "!", "OK");
+        Preferences.Default.Set("DefaultNimi", nimi);
+    }
+    private async void MathAdditionClicked(object sender, EventArgs e)
+    {
+        int A = rnd.Next(1, 100);
+        int B = rnd.Next(1, 100);
+        int C = A + B;
+        int resultM = int.Parse(await DisplayPromptAsync("Küsimus", "Mis on " + A + " + " + B + "?", placeholder: "Sisesta Vastus", keyboard: Keyboard.Numeric));
+        try 
+        { 
+            if (resultM == C)
+            {
+                await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus!", "OK");
+            }
+            else
+                await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
+        }
+        catch
+        {
+
+        }
+    }
+    private async void MathSubtractionClicked(object sender, EventArgs e)
+    {
+        int A = rnd.Next(1, 100);
+        int B = rnd.Next(1, 100);
+        int C = A - B;
+        int resultM = int.Parse(await DisplayPromptAsync("Küsimus", "Mis on " + A + " - " + B + "?", placeholder: "Sisesta Vastus", keyboard: Keyboard.Numeric));
+        try
+        {
+            if (resultM == C)
+            {
+                await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus!", "OK");
+            }
+            else
+                await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
+        }
+        catch
+        {
+
+        }
+    }
+    private async void MathMultiplicationClicked(object sender, EventArgs e)
+    {
+        int A = rnd.Next(1, 100);
+        int B = rnd.Next(1, 100);
+        int C = A * B;
+        int resultM = int.Parse(await DisplayPromptAsync("Küsimus", "Mis on " + A + " * " + B + "?", placeholder: "Sisesta Vastus", keyboard: Keyboard.Numeric));
+        try
+        {
+            if (resultM == C)
+            {
+                await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus!", "OK");
+            }
+            else
+                await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
+        }
+        catch
+        {
+
+        }
+    }
+    private async void MathQuiz(object sender, EventArgs e)
+    {
+        int A = rnd.Next(1, 100);
+        int B = rnd.Next(1, 100);
+        int C = A * B;
+        int resultM = int.Parse(await DisplayPromptAsync("Küsimus", "Mis on " + A + " * " + B + "?", placeholder: "Sisesta Vastus", keyboard: Keyboard.Numeric));
+        try
+        {
+            if (resultM != null)
+            {
+            if (resultM == C)
+            {
+                await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus!", "OK");
+            }
+            else
+                await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
+            }
+        }
+        catch
+        {
+
+        }
     }
 }
