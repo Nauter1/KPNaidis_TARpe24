@@ -8,6 +8,8 @@ public partial class PopupPage : ContentPage
     Button MathAddition;
     Button MathSubtraction;
     Button MathMultiplication;
+    Button MathRando;
+    Button MathQuizButton;
     Random rnd = new Random();
 
     string nimi;
@@ -96,12 +98,36 @@ public partial class PopupPage : ContentPage
             ZIndex = 1
         };
         MathMultiplication.Clicked += MathMultiplicationClicked;
+        MathRando = new Button
+        {
+            Text = "Rando",
+            FontSize = 36,
+            FontFamily = "Digital System 400",
+            BackgroundColor = Colors.LightGray,
+            TextColor = Colors.Black,
+            CornerRadius = 10,
+            HeightRequest = 60,
+            ZIndex = 1
+        };
+        MathRando.Clicked += MathRandoClicked;
+        MathQuizButton = new Button
+        {
+            Text = "Test",
+            FontSize = 36,
+            FontFamily = "Digital System 400",
+            BackgroundColor = Colors.LightGray,
+            TextColor = Colors.Black,
+            CornerRadius = 10,
+            HeightRequest = 60,
+            ZIndex = 1
+        };
+        MathQuizButton.Clicked += MathQuizClicked;
 
         vsl = new VerticalStackLayout
         {
             Padding = 20,
             Spacing = 15,
-            Children = { Query, MathAddition, MathSubtraction, MathMultiplication , alertButton, alertYesNoButton, alertListButton, alertQuestButton },
+            Children = { Query, MathAddition, MathSubtraction, MathMultiplication , MathRando, MathQuizButton, alertButton, alertYesNoButton, alertListButton, alertQuestButton },
             HorizontalOptions = LayoutOptions.Center
         };
         Content = vsl;
@@ -194,7 +220,69 @@ public partial class PopupPage : ContentPage
 
         }
     }
-    private async void MathQuiz(object sender, EventArgs e)
+
+    private async void MathRandoClicked(object sender, EventArgs e)
+    {
+        int A = rnd.Next(1, 100);
+        int B = rnd.Next(1, 100);
+        int C = A * B;
+        int D = rnd.Next(1, 3);
+        int E = rnd.Next(1, 100);
+        int resultM;
+        switch (D)
+        {
+            case 1:
+                resultM = int.Parse(await DisplayActionSheetAsync("Mis on " + A + " * " + B + "?", "Loobu", "Ok", ""+ C + "", "" + C/E + "", "" + (C-E) + "", "" + (C+E) + ""));
+                if (resultM != null)
+                {
+                    if (resultM == C)
+                    {
+                        await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus!", "OK");
+                    }
+                    else
+                        await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
+                }
+                break;
+            case 2:
+                resultM = int.Parse(await DisplayActionSheetAsync("Mis on " + A + " * " + B + "?", "Loobu", "Ok", "" + C / E + "", "" + C + "", "" + (C + E) + "", "" + (C - E) + ""));
+                if (resultM != null)
+                {
+                    if (resultM == C)
+                    {
+                        await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus!", "OK");
+                    }
+                    else
+                        await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
+                }
+                break;
+            case 3:
+                resultM = int.Parse(await DisplayActionSheetAsync("Mis on " + A + " * " + B + "?", "Loobu", "Ok", "" + (C - E) + "", "" + (C + E) + "", "" + C + "", "" + C / E + ""));
+                if (resultM != null)
+                {
+                    if (resultM == C)
+                    {
+                        await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus!", "OK");
+                    }
+                    else
+                        await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
+                }
+                break;
+            case 4:
+                resultM = int.Parse(await DisplayActionSheetAsync("Mis on " + A + " * " + B + "?", "Loobu", "Ok", "" + (C - E) + "", "" + C / (E-1) + "", "" + (C + E) + "", "" + C + ""));
+                if (resultM != null)
+                {
+                    if (resultM == C)
+                    {
+                        await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus!", "OK");
+                    }
+                    else
+                        await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
+                }
+                break;
+        }
+           
+    }
+    private async void MathQuizClicked(object sender, EventArgs e)
     {
         int A = rnd.Next(1, 100);
         int B = rnd.Next(1, 100);
@@ -204,12 +292,96 @@ public partial class PopupPage : ContentPage
         {
             if (resultM != null)
             {
-            if (resultM == C)
-            {
-                await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus!", "OK");
-            }
-            else
-                await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
+                if (resultM == C)
+                {
+                    await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus!", "OK");
+                    A = rnd.Next(1, 100);
+                    B = rnd.Next(1, 100);
+                    C = A - B;
+                    resultM = int.Parse(await DisplayPromptAsync("Küsimus", "Mis on " + A + " - " + B + "?", placeholder: "Sisesta Vastus", keyboard: Keyboard.Numeric));
+                    if (resultM != null)
+                    {
+                        if (resultM == C)
+                        {
+                            await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus!", "OK");
+                            A = rnd.Next(1, 100);
+                            B = rnd.Next(1, 100);
+                            C = A + B;
+                            resultM = int.Parse(await DisplayPromptAsync("Küsimus", "Mis on " + A + " + " + B + "?", placeholder: "Sisesta Vastus", keyboard: Keyboard.Numeric));
+                            if (resultM != null)
+                            {
+                                if (resultM == C)
+                                {
+                                    await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus!", "OK");
+                                    A = rnd.Next(1, 100);
+                                    B = rnd.Next(1, 100);
+                                    C = A * B;
+                                    int D = rnd.Next(1, 3);
+                                    int E = rnd.Next(1, 100);
+                                    switch (D)
+                                    {
+                                        case 1:
+                                            resultM = int.Parse(await DisplayActionSheetAsync("Mis on " + A + " * " + B + "?", "Loobu", "Ok", "" + C + "", "" + C / E + "", "" + (C - E) + "", "" + (C + E) + ""));
+                                            if (resultM != null)
+                                            {
+                                                if (resultM == C)
+                                                {
+                                                    await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus! Sa oled lõpetanud testi!", "OK");
+                                                }
+                                                else
+                                                    await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
+                                            }
+                                            break;
+                                        case 2:
+                                            resultM = int.Parse(await DisplayActionSheetAsync("Mis on " + A + " * " + B + "?", "Loobu", "Ok", "" + C / E + "", "" + C + "", "" + (C + E) + "", "" + (C - E) + ""));
+                                            if (resultM != null)
+                                            {
+                                                if (resultM == C)
+                                                {
+                                                    await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus! Sa oled lõpetanud testi!", "OK");
+                                                }
+                                                else
+                                                    await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
+                                            }
+                                            break;
+                                        case 3:
+                                            resultM = int.Parse(await DisplayActionSheetAsync("Mis on " + A + " * " + B + "?", "Loobu", "Ok", "" + (C - E) + "", "" + (C + E) + "", "" + C + "", "" + C / E + ""));
+                                            if (resultM != null)
+                                            {
+                                                if (resultM == C)
+                                                {
+                                                    await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus! Sa oled lõpetanud testi!", "OK");
+                                                }
+                                                else
+                                                    await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
+                                            }
+                                            break;
+                                        case 4:
+                                            resultM = int.Parse(await DisplayActionSheetAsync("Mis on " + A + " * " + B + "?", "Loobu", "Ok", "" + (C - E) + "", "" + C / (E - 1) + "", "" + (C + E) + "", "" + C + ""));
+                                            if (resultM != null)
+                                            {
+                                                if (resultM == C)
+                                                {
+                                                    await DisplayAlertAsync("Õige!", resultM + " on Õige Vastus! Sa oled lõpetanud testi!", "OK");
+                                                }
+                                                else
+                                                    await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
+                                            }
+                                            break;
+                                    }
+
+                                }
+                                else
+                                    await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
+                            }
+                        }
+                        else
+                            await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
+                    }
+                }
+
+                else
+                    await DisplayAlertAsync("Vale..", resultM + " on Vale Vastus!", "OK");
             }
         }
         catch
