@@ -4,7 +4,7 @@ public partial class Timer_Page : ContentPage
 {
 	public Timer_Page()
 	{
-        InitializeComponent();
+
     }
 	bool on_off = true;
 	private async void ShowTime()
