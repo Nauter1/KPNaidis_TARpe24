@@ -1,6 +1,3 @@
-using Android.Content;
-using Android.Telecom;
-
 namespace KPNaidis_TARpe24;
 
 public partial class KontaktAndmed : ContentPage
