@@ -1,3 +1,6 @@
+using Android.Content;
+using Android.Telecom;
+
 namespace KPNaidis_TARpe24;
 
 public partial class KontaktAndmed : ContentPage
@@ -163,6 +166,7 @@ public partial class KontaktAndmed : ContentPage
             CornerRadius = 10,
             HeightRequest = 60,
         };
+        callbutton.Clicked += Call_Clicked;
 
         // M‰‰rame TableView lehe peamiseks sisuks
         Content = new VerticalStackLayout
@@ -233,4 +237,12 @@ public partial class KontaktAndmed : ContentPage
 			await DisplayAlertAsync("Viga", "E-maili saatmine pole selles seadmes toetatud", "OK");
 		}
 	}
+
+    private async void Call_Clicked(object? sender, EventArgs e)
+    {
+        if (string.IsNullOrWhiteSpace(phonet.Text)) return;
+        string phone = phonet.Text;
+        if (PhoneDialer.Default.IsSupported)
+            PhoneDialer.Default.Open(phone);
+    }
 }
