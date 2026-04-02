@@ -16,7 +16,11 @@ public partial class RiikValik : ContentPage
 	{
         riik = new ObservableCollection<Riik>
             {
-                new Riik { Nimi="Eesti", Pealinn="Tallinn", Rahvaarv=1372000, Lipp="Galaxy.png" },
-            };
+                new Riik { Nimi="Eesti", Pealinn="Tallinn", Rahvaarv=1372000, Lipp="eesti.png" },
+                new Riik { Nimi="Soome", Pealinn="Helsingi", Rahvaarv=5652000, Lipp="finland.png" },
+                new Riik { Nimi="Saksamaa", Pealinn="Berliin", Rahvaarv=83497000, Lipp="saksamaa.png" },
+                new Riik { Nimi="Holland", Pealinn="Amsterdam", Rahvaarv=18044000, Lipp="holland.png" },
+
+           };
     }
 }
