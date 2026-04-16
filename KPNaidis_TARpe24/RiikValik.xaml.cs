@@ -10,10 +10,12 @@ public partial class RiikValik : ContentPage
         public string Pealinn { get; set; }
         public int Rahvaarv { get; set; }
         public string Lipp { get; set; } // Hoiab pildi nime või seadme failiteed
+        public string Government { get; set; }
+        public string Celebration { get; set; }
     }
     ObservableCollection<Riik> riik;
     ListView list;
-    Entry entryNimi, entryPealinn, entryRahva;
+    Entry entryNimi, entryPealinn, entryRahva, entryGov, entryCelebrate;
     // Muutujad pildi valimise jaoks
     string valitudPildiTee = "";
     Label lblValitudPilt;
@@ -21,10 +23,10 @@ public partial class RiikValik : ContentPage
 	{
         riik = new ObservableCollection<Riik>
             {
-                new Riik { Nimi="Eesti", Pealinn="Tallinn", Rahvaarv=1372000, Lipp="eesti.png" },
-                new Riik { Nimi="Soome", Pealinn="Helsingi", Rahvaarv=5652000, Lipp="finland.png" },
-                new Riik { Nimi="Saksamaa", Pealinn="Berliin", Rahvaarv=83497000, Lipp="saksamaa.png" },
-                new Riik { Nimi="Holland", Pealinn="Amsterdam", Rahvaarv=18044000, Lipp="holland.png" },
+                new Riik { Nimi="Eesti", Pealinn="Tallinn", Rahvaarv=1372000, Lipp="eesti.png", Government="Unitary parliamentary republic", Celebration="24.02.1918" },
+                new Riik { Nimi="Soome", Pealinn="Helsingi", Rahvaarv=5652000, Lipp="finland.png", Government="Unitary parliamentary republic", Celebration="6.01.1917" },
+                new Riik { Nimi="Saksamaa", Pealinn="Berliin", Rahvaarv=83497000, Lipp="saksamaa.png", Government="Federal parliamentary republic", Celebration="5.10.1945" },
+                new Riik { Nimi="Holland", Pealinn="Amsterdam", Rahvaarv=18044000, Lipp="holland.png", Government="Constitutional Monarchy", Celebration="3.05.1945" },
 
            };
 
@@ -34,6 +36,8 @@ public partial class RiikValik : ContentPage
         entryNimi = new Entry { Placeholder = "Riigi nimi" };
         entryPealinn = new Entry { Placeholder = "Pealinn" };
         entryRahva = new Entry { Placeholder = "Rahvaarv (täisarv)", Keyboard = Keyboard.Numeric };
+        entryGov = new Entry { Placeholder = "Governance" };
+        entryCelebrate = new Entry { Placeholder = "Tähtis Kuupäev" };
 
         // 2. PILDI VALIMISE KONTROLLID
         Button btnValiPilt = new Button { Text = "📷 Vali pilt galeriist", BackgroundColor = Colors.LightBlue };
@@ -114,6 +118,8 @@ public partial class RiikValik : ContentPage
                     entryNimi,
                     entryPealinn,
                     entryRahva,
+                    entryGov,
+                    entryCelebrate,
                     btnValiPilt,   // Uus nupp galerii jaoks
                     lblValitudPilt, // Tagasiside silt
                     btnLisa,
@@ -162,7 +168,10 @@ public partial class RiikValik : ContentPage
                 Nimi = entryNimi.Text,
                 Pealinn = entryPealinn.Text,
                 Rahvaarv = hind,
-                Lipp = pildiNimi
+                Lipp = pildiNimi,
+                Government = entryGov.Text,
+                Celebration = entryCelebrate.Text,
+
             });
 
             // Puhastame väljad uue sisestuse jaoks
@@ -209,7 +218,7 @@ public partial class RiikValik : ContentPage
 
         if (valitudRiik != null)
         {
-            await DisplayAlert("Riigi info", $"Riik: {valitudRiik.Nimi}\nPealinn: {valitudRiik.Pealinn}\nRahvaarv: {valitudRiik.Rahvaarv} €", "Sulge");
+            await DisplayAlert("Riigi info", $"Riik: {valitudRiik.Nimi}\nPealinn: {valitudRiik.Pealinn}\nRahvaarv: {valitudRiik.Rahvaarv}\nRiigivalitsus: {valitudRiik.Government}\nTähtis kuupäev: {valitudRiik.Celebration}", "Sulge");
         }
     }
 }
