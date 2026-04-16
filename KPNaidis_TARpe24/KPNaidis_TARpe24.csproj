@@ -72,6 +72,9 @@
 	  <MauiXaml Update="FigurePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="KarusselPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="KontaktAndmed.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
