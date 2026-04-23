@@ -8,5 +8,38 @@
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+
+            <!-- English -->
+            <Button Command="{Binding SetEnglishCommand}">
+                <Button.ImageSource>
+                    <FileImageSource File="flag_en.png" />
+                </Button.ImageSource>
+                <Button.Text>
+                    <Binding Path="EnglishButton" />
+                </Button.Text>
+            </Button>
+
+            <!-- Russian -->
+            <Button Command="{Binding SetRussianCommand}">
+                <Button.ImageSource>
+                    <FileImageSource File="flag_ru.png" />
+                </Button.ImageSource>
+                <Button.Text>
+                    <Binding Path="RussianButton" />
+                </Button.Text>
+            </Button>
+
+            <!-- Estonian -->
+            <Button Command="{Binding SetEstonianCommand}">
+                <Button.ImageSource>
+                    <FileImageSource File="flag_et.png" />
+                </Button.ImageSource>
+                <Button.Text>
+                    <Binding Path="EstonianButton" />
+                </Button.Text>
+            </Button>
+
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
