@@ -6,7 +6,7 @@ namespace KPNaidis_TARpe24
     {
         public App()
         {
-            MainPage = new AppShell();
+
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

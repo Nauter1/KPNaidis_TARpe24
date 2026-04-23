@@ -12,6 +12,7 @@ public partial class InteraktiivneKarussel : ContentPage
 
         public string ImageUrl { get; set; }
         public string Description { get; set; }
+        public string LongDesc { get; set; }
 
     }
 
@@ -36,11 +37,11 @@ public partial class InteraktiivneKarussel : ContentPage
 
         {
 
-            new CarouselItem { Title = "Päikesetõus", ImageUrl = "https://picsum.photos/id/1015/600/400" },
-
-            new CarouselItem { Title = "Metsavaikus", ImageUrl = "https://picsum.photos/id/1016/600/400" },
-
-            new CarouselItem { Title = "Järvepeegel", ImageUrl = "https://picsum.photos/id/1018/600/400" }
+            new CarouselItem { Title = "Pasta Carbonara", ImageUrl = "https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/0346a29a89ef229b1a0ff9697184f944/Derivates/cb5051204f4a4525c8b013c16418ae2904e737b7.jpg", Description = "Classic Roman pasta dish" },
+            new CarouselItem { Title = "Pizza Margherita", ImageUrl = "https://content.jwplatform.com/v2/media/Bt9tKjiM/poster.jpg?width=720", Description = "Simple and delicious" },
+            new CarouselItem { Title = "Tiramisu", ImageUrl = "https://www.bunsenburnerbakery.com/wp-content/uploads/2016/06/easy-tiramisu-square-29-735x735.jpg", Description = "Popular coffee-flavored dessert" },
+            new CarouselItem { Title = "Risotto alla Milanese", ImageUrl = "https://safrescobaldistatic.blob.core.windows.net/media/2022/11/RISOTTO-ALLA-MILANESE.jpg", Description = "Creamy saffron rice" },
+            new CarouselItem { Title = "Lasagne", ImageUrl = "https://www.safefood.net/getmedia/acad61f4-bd51-4880-8005-cd46a718e8b5/lasagne.jpg?width=1200&height=800&ext=.jpg", Description = "Layers of pasta, meat, and cheese" },
 
         };
 
@@ -84,6 +85,7 @@ public partial class InteraktiivneKarussel : ContentPage
                 var image = new Image { Aspect = Aspect.AspectFill };
 
                 image.SetBinding(Image.SourceProperty, "ImageUrl");
+                
 
 
                 var gradient = new BoxView
@@ -131,13 +133,32 @@ public partial class InteraktiivneKarussel : ContentPage
 
                 label.SetBinding(Label.TextProperty, "Title");
 
+                var sublabel = new Label
+
+                {
+
+                    TextColor = Colors.Grey,
+
+                    FontSize = 12,
+
+                    FontAttributes = FontAttributes.Bold,
+
+                    Margin = new Thickness(7),
+
+                    VerticalOptions = LayoutOptions.End
+
+                };
+
+                sublabel.SetBinding(Label.TextProperty, "Description");
+
 
                 grid.Children.Add(image);
 
                 grid.Children.Add(gradient);
 
                 grid.Children.Add(label);
-
+                grid.Children.Add(sublabel);
+                
 
                 frame.Content = grid;
 
@@ -146,7 +167,17 @@ public partial class InteraktiivneKarussel : ContentPage
             })
 
         };
+        TapGestureRecognizer tap = new TapGestureRecognizer();
+        carouselView.GestureRecognizers.Add(tap);
+        tap.Tapped += (sender, e) =>
+        {
+            CarouselItem valitudCarousel;
 
+            if (valitudCarousel != null)
+            {
+                DisplayAlert("Telefoni info", $"Tootja: {valitudCarousel.Title}\nMudel: {valitudCarousel.Description}\nHind: {valitudCarousel.LongDesc} €", "Sulge");
+            }
+        };
 
         var indicatorView = new IndicatorView
 
@@ -209,6 +240,8 @@ public partial class InteraktiivneKarussel : ContentPage
 
         };
 
+        
+
 
         // Automaatne kerimine
 
@@ -226,6 +259,8 @@ public partial class InteraktiivneKarussel : ContentPage
             return true;
 
         });
+
+        
 
 
         Content = new ScrollView
