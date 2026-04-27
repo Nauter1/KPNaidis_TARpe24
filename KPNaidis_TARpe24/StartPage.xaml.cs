@@ -4,8 +4,8 @@ public partial class StartPage : ContentPage
 {
 	VerticalStackLayout vst;
 	ScrollView sv;
-	public List<ContentPage> Lehed = new List<ContentPage>() { new TextPage(), new FigurePage(), new Timer_Page(), new ValgusFoorPage(), new DateTimePage(), new StepperSliderPage(), new RGBSlider(), new Snowman(), new PopupPage(), new PickerImagePage(), new TripsTrapsTrull(), new KontaktAndmed(), new DynamicList(), new RiikValik(), new KarusselPages(), new InteraktiivneKarussel() };
-	public List<string> LeheNimed = new List<string>() { "Tekst", "Kujund", "Timer", "Foor", "DateTime", "Stepper", "RGB Slider", "Snowman", "PopUp", "Grid", "Trips-Traps-Trull", "Kontakt Andmed", "Dynamic List", "Riik Valik", "KarusselPages", "InteraktiivneKarussel" };
+	public List<ContentPage> Lehed = new List<ContentPage>() { new LanguageSwap(), new TextPage(), new FigurePage(), new Timer_Page(), new ValgusFoorPage(), new DateTimePage(), new StepperSliderPage(), new RGBSlider(), new Snowman(), new PopupPage(), new PickerImagePage(), new TripsTrapsTrull(), new KontaktAndmed(), new DynamicList(), new RiikValik(), new KarusselPages(), new InteraktiivneKarussel() };
+	public List<string> LeheNimed = new List<string>() { "LanguageSwap","Tekst", "Kujund", "Timer", "Foor", "DateTime", "Stepper", "RGB Slider", "Snowman", "PopUp", "Grid", "Trips-Traps-Trull", "Kontakt Andmed", "Dynamic List", "Riik Valik", "KarusselPages", "InteraktiivneKarussel" };
 	public StartPage()
 	{
 		// Title = "Avaleht";

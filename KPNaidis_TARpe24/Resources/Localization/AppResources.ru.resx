@@ -117,9 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-	<data name="GreetingText" xml:space="preserve"><value>Привет, мир!</value></data>
-	<data name="ChangeLanguage" xml:space="preserve"><value>Сменить язык</value></data>
-	<data name="EnglishButton" xml:space="preserve"><value>Английский</value></data>
-	<data name="RussianButton" xml:space="preserve"><value>Русский</value></data>
-	<data name="EstonianButton" xml:space="preserve"><value>Эстонский</value></data>
+  <data name="GreetingText" xml:space="preserve">
+    <value>Привет, мир!</value>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Сменить язык</value>
+  </data>
+  <data name="EnglishButton" xml:space="preserve">
+    <value>Английский</value>
+  </data>
+  <data name="RussianButton" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="EstonianButton" xml:space="preserve">
+    <value>Эстонский</value>
+  </data>
+  <data name="Pasta" xml:space="preserve">
+    <value>Классическое римское блюдо из пасты</value>
+  </data>
+  <data name="PastaLongDesc" xml:space="preserve">
+    <value>Карбонара (итальянское название: [karboˈnaːra]) — это блюдо из пасты, приготовленное из вяленой свинины, твердого сыра, яиц, соли и черного перца. Оно типично для региона Лацио в Италии. Свое современное название и форму блюдо получило в середине XX века.</value>
+  </data>
+  <data name="Pizza" xml:space="preserve">
+    <value>Просто и вкусно</value>
+  </data>
+  <data name="PizzaLongDesc" xml:space="preserve">
+    <value>Пицца Маргарита, также известная как пицца Маргарита, наряду с пиццей Маринара, является типичной неаполитанской пиццей. Она имеет круглую форму с приподнятым краем (корничионе) и приправляется измельченными вручную очищенными помидорами, моцареллой (моцареллой из буйволиного молока или фиор ди латте), свежими листьями базилика и оливковым маслом первого холодного отжима. Тесто готовится путем смешивания воды, соли и дрожжей (закваски или свежих или сухих пекарских дрожжей) с мукой (00 или 0).</value>
+  </data>
+  <data name="Tiramisu" xml:space="preserve">
+    <value>Популярный десерт со вкусом кофе</value>
+  </data>
+  <data name="TiramisuLongDesc" xml:space="preserve">
+    <value>Тирамису — итальянский десерт, приготовленный из пропитанных кофе бисквитов савоярди, покрытых кремом из яичных желтков, сахара, маскарпоне и какао-порошка. Он возник на северо-востоке Италии, а современные версии стали популярными в ресторанах с конца 1960-х годов. Тирамису стал одним из самых известных в мире итальянских десертов и вдохновил на создание множества вариаций в домашней и профессиональной кухне. Название происходит от итальянского слова tirami su, означающего «подними мне настроение» или «подбодри меня».</value>
+  </data>
+  <data name="Risotto" xml:space="preserve">
+    <value>Сливочный рис с шафраном</value>
+  </data>
+  <data name="RisottoLongDesc" xml:space="preserve">
+    <value>Существует несколько вариантов ризотто по-милански. По словам Элизабет Дэвид в её книге «Итальянская кухня», «классический вариант готовится просто на курином бульоне и приправляется шафраном; в конце приготовления добавляются сливочное масло и тертый пармезан, а затем подаётся ещё больше сыра и масла. Второй вариант готовится с говяжьим костным мозгом и белым вином; третий — с марсалой. В каждом случае шафран используется в качестве ароматизатора».</value>
+  </data>
+  <data name="Lasagne" xml:space="preserve">
+    <value>Слои макарон, мяса и сыра</value>
+  </data>
+  <data name="LasagneLongDesc" xml:space="preserve">
+    <value>Лазанья, также известная во множественном числе как lasagne, — это вид пасты, приготовленной в виде широких плоских листов. Она возникла в итальянской кухне, где её подают различными способами, в том числе в бульоне (lasagne in brodo), но наиболее известна своим использованием в запеканке, приготовленной путем укладки слоев пасты, чередующихся с начинками, такими как рагу (фарш и томатный соус), соус бешамель, овощи, сыры (которые могут включать рикотту, моцареллу и пармезан), а также приправы и специи. Обычно приготовленная паста соединяется с остальными ингредиентами, посыпается тертым сыром, а затем запекается в духовке (al forno): региональные вариации этого блюда встречаются по всей Италии.</value>
+  </data>
+  <data name="Parmigiano" xml:space="preserve">
+    <value>Твердая и зернистая.</value>
+  </data>
+  <data name="ParmigianoLongDesc" xml:space="preserve">
+    <value>Пармезан (итальянское название: Parmigiano Reggiano, произносится [parmiˈdʒaːno redˈdʒaːno]) — итальянский твердый зернистый сыр, производимый из коровьего молока и выдерживаемый не менее 12 месяцев. Это сыр типа «грана», наряду с Грана Падано, историческим Граноне Лодиджано [it] и другими.</value>
+  </data>
 </root>

@@ -97,11 +97,119 @@ namespace KPNaidis_TARpe24.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Layers of pasta, meat, and cheese.
+        /// </summary>
+        internal static string Lasagne {
+            get {
+                return ResourceManager.GetString("Lasagne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lasagna, also known by the plural form lasagne, is a type of pasta made in wide, flat sheets. It originates in Italian cuisine, where it is served in a number of ways, including in broth (lasagne in brodo), but is best known for its use in a baked dish made by stacking layers of pasta, alternating with fillings such as ragù (ground meats and tomato sauce), béchamel sauce, vegetables, cheeses (which may include ricotta, mozzarella, and Parmesan), and seasonings and spices. Typically, cooked pasta is assemble [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string LasagneLongDesc {
+            get {
+                return ResourceManager.GetString("LasagneLongDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hard and granular..
+        /// </summary>
+        internal static string Parmigiano {
+            get {
+                return ResourceManager.GetString("Parmigiano", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parmesan (Italian: Parmigiano Reggiano, pronounced [parmiˈdʒaːno redˈdʒaːno]) is an Italian hard, granular cheese produced from cow&apos;s milk and aged at least 12 months. It is a grana-type cheese, along with Grana Padano, the historic Granone Lodigiano [it], and others..
+        /// </summary>
+        internal static string ParmigianoLongDesc {
+            get {
+                return ResourceManager.GetString("ParmigianoLongDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Classic Roman pasta dish.
+        /// </summary>
+        internal static string Pasta {
+            get {
+                return ResourceManager.GetString("Pasta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Carbonara (Italian: [karboˈnaːra]) is a pasta dish made with cured pork, hard cheese, eggs, salt, and black pepper. It is typical of the Lazio region of Italy. The dish took its modern form and name in the middle of the 20th century..
+        /// </summary>
+        internal static string PastaLongDesc {
+            get {
+                return ResourceManager.GetString("PastaLongDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Simple and delicious.
+        /// </summary>
+        internal static string Pizza {
+            get {
+                return ResourceManager.GetString("Pizza", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pizza Margherita, also known as Margherita pizza, is, together with the pizza marinara, the typical Neapolitan pizza. It is roundish in shape with a raised edge (the cornicione) and seasoned with hand-crushed peeled tomatoes, mozzarella (buffalo mozzarella or fior di latte), fresh basil leaves, and extra virgin olive oil. The dough is made by mixing water, salt, and yeast (either sourdough, or fresh or dry baker&apos;s yeast) with flour (00 or 0)..
+        /// </summary>
+        internal static string PizzaLongDesc {
+            get {
+                return ResourceManager.GetString("PizzaLongDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creamy saffron rice.
+        /// </summary>
+        internal static string Risotto {
+            get {
+                return ResourceManager.GetString("Risotto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are various versions of risotto alla milanese. According to Elizabeth David in her Italian Food, \&quot;The classic one is made simply with chicken broth and flavoured with saffron; butter and grated Parmesan cheese are stirred in at the end of the cooking, and more cheese and butter served with it. The second version is made with beef marrow and white wine; a third with Marsala. In each case saffron is used as a flavouring.\&quot;.
+        /// </summary>
+        internal static string RisottoLongDesc {
+            get {
+                return ResourceManager.GetString("RisottoLongDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Russian.
         /// </summary>
         internal static string RussianButton {
             get {
                 return ResourceManager.GetString("RussianButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Popular coffee-flavored dessert.
+        /// </summary>
+        internal static string Tiramisu {
+            get {
+                return ResourceManager.GetString("Tiramisu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tiramisu is an Italian dessert made with coffee-soaked ladyfingers (savoiardi) covered with a cream of egg yolks, sugar, mascarpone, and cocoa powder. It originated in northeastern Italy, and modern versions were popularized in restaurants from the late 1960s. Tiramisu has become one of the most internationally recognised Italian desserts and has inspired many variations in home and professional cooking. The name comes from the Italian tirami su, meaning \&quot;pick me up\&quot; or \&quot;cheer me up\&quot;..
+        /// </summary>
+        internal static string TiramisuLongDesc {
+            get {
+                return ResourceManager.GetString("TiramisuLongDesc", resourceCulture);
             }
         }
     }

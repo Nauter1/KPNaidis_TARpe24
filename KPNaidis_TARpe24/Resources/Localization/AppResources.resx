@@ -117,9 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-	<data name="GreetingText" xml:space="preserve"><value>Hello, World!</value></data>
-	<data name="ChangeLanguage" xml:space="preserve"><value>Change Language</value></data>
-	<data name="EnglishButton" xml:space="preserve"><value>English</value></data>
-	<data name="RussianButton" xml:space="preserve"><value>Russian</value></data>
-	<data name="EstonianButton" xml:space="preserve"><value>Estonian</value></data>
+  <data name="GreetingText" xml:space="preserve">
+    <value>Hello, World!</value>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Change Language</value>
+  </data>
+  <data name="EnglishButton" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="RussianButton" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="EstonianButton" xml:space="preserve">
+    <value>Estonian</value>
+  </data>
+  <data name="Pasta" xml:space="preserve">
+    <value>Classic Roman pasta dish</value>
+  </data>
+  <data name="PastaLongDesc" xml:space="preserve">
+    <value>Carbonara (Italian: [karboˈnaːra]) is a pasta dish made with cured pork, hard cheese, eggs, salt, and black pepper. It is typical of the Lazio region of Italy. The dish took its modern form and name in the middle of the 20th century.</value>
+  </data>
+  <data name="Pizza" xml:space="preserve">
+    <value>Simple and delicious</value>
+  </data>
+  <data name="PizzaLongDesc" xml:space="preserve">
+    <value>Pizza Margherita, also known as Margherita pizza, is, together with the pizza marinara, the typical Neapolitan pizza. It is roundish in shape with a raised edge (the cornicione) and seasoned with hand-crushed peeled tomatoes, mozzarella (buffalo mozzarella or fior di latte), fresh basil leaves, and extra virgin olive oil. The dough is made by mixing water, salt, and yeast (either sourdough, or fresh or dry baker's yeast) with flour (00 or 0).</value>
+  </data>
+  <data name="Tiramisu" xml:space="preserve">
+    <value>Popular coffee-flavored dessert</value>
+  </data>
+  <data name="TiramisuLongDesc" xml:space="preserve">
+    <value>Tiramisu is an Italian dessert made with coffee-soaked ladyfingers (savoiardi) covered with a cream of egg yolks, sugar, mascarpone, and cocoa powder. It originated in northeastern Italy, and modern versions were popularized in restaurants from the late 1960s. Tiramisu has become one of the most internationally recognised Italian desserts and has inspired many variations in home and professional cooking. The name comes from the Italian tirami su, meaning \"pick me up\" or \"cheer me up\".</value>
+  </data>
+  <data name="Risotto" xml:space="preserve">
+    <value>Creamy saffron rice</value>
+  </data>
+  <data name="RisottoLongDesc" xml:space="preserve">
+    <value>There are various versions of risotto alla milanese. According to Elizabeth David in her Italian Food, \"The classic one is made simply with chicken broth and flavoured with saffron; butter and grated Parmesan cheese are stirred in at the end of the cooking, and more cheese and butter served with it. The second version is made with beef marrow and white wine; a third with Marsala. In each case saffron is used as a flavouring.\"</value>
+  </data>
+  <data name="Lasagne" xml:space="preserve">
+    <value>Layers of pasta, meat, and cheese</value>
+  </data>
+  <data name="LasagneLongDesc" xml:space="preserve">
+    <value>Lasagna, also known by the plural form lasagne, is a type of pasta made in wide, flat sheets. It originates in Italian cuisine, where it is served in a number of ways, including in broth (lasagne in brodo), but is best known for its use in a baked dish made by stacking layers of pasta, alternating with fillings such as ragù (ground meats and tomato sauce), béchamel sauce, vegetables, cheeses (which may include ricotta, mozzarella, and Parmesan), and seasonings and spices. Typically, cooked pasta is assembled with the other ingredients, topped with grated cheese, and then baked in an oven (al forno): regional variations of this dish are found across Italy.</value>
+  </data>
+  <data name="Parmigiano" xml:space="preserve">
+    <value>Hard and granular.</value>
+  </data>
+  <data name="ParmigianoLongDesc" xml:space="preserve">
+    <value>Parmesan (Italian: Parmigiano Reggiano, pronounced [parmiˈdʒaːno redˈdʒaːno]) is an Italian hard, granular cheese produced from cow's milk and aged at least 12 months. It is a grana-type cheese, along with Grana Padano, the historic Granone Lodigiano [it], and others.</value>
+  </data>
 </root>

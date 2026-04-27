@@ -117,9 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-	<data name="GreetingText" xml:space="preserve"><value>Tere, maailm!</value></data>
-	<data name="ChangeLanguage" xml:space="preserve"><value>Muuda keelt</value></data>
-	<data name="EnglishButton" xml:space="preserve"><value>Inglise</value></data>
-	<data name="RussianButton" xml:space="preserve"><value>Vene</value></data>
-	<data name="EstonianButton" xml:space="preserve"><value>Eesti</value></data>
+  <data name="GreetingText" xml:space="preserve">
+    <value>Tere, maailm!</value>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Muuda keelt</value>
+  </data>
+  <data name="EnglishButton" xml:space="preserve">
+    <value>Inglise</value>
+  </data>
+  <data name="RussianButton" xml:space="preserve">
+    <value>Vene</value>
+  </data>
+  <data name="EstonianButton" xml:space="preserve">
+    <value>Eesti</value>
+  </data>
+  <data name="Pasta" xml:space="preserve">
+    <value>Klassikaline Rooma pastaroog</value>
+  </data>
+  <data name="PastaLongDesc" xml:space="preserve">
+    <value>Carbonara (itaalia keeles [karboˈnaːra]) on pastaroog, mis on valmistatud suitsutatud sealihast, kõvast juustust, munadest, soolast ja mustast piprast. See on tüüpiline Itaalia Lazio piirkonnale. Roog sai oma tänapäevase kuju ja nime 20. sajandi keskel.</value>
+  </data>
+  <data name="Pizza" xml:space="preserve">
+    <value>Lihtne ja maitsev</value>
+  </data>
+  <data name="PizzaLongDesc" xml:space="preserve">
+    <value>Pizza Margherita, tuntud ka kui Margherita pitsa, on koos pizza marinara'ga tüüpiline Napoli pitsa. See on ümara kujuga, kõrgendatud servaga (cornicione) ning maitsestatud käsitsi purustatud kooritud tomatite, mozzarella (buffalo mozzarella või fior di latte), värskete basiilikulehtede ja ekstra neitsioliiviõliga. Tainas valmistatakse vee, soola ja pärmi (kas juuretisega või värske või kuiva pagaripärmiga) segamisel jahuga (00 või 0).</value>
+  </data>
+  <data name="Tiramisu" xml:space="preserve">
+    <value>Populaarne kohvimaitseline magustoit</value>
+  </data>
+  <data name="TiramisuLongDesc" xml:space="preserve">
+    <value>Tiramisu on Itaalia magustoit, mis on valmistatud kohvis leotatud omaiardi küpsistest, mis on kaetud munakollaste, suhkru, mascarpone ja kakaopulbri kreemiga. See pärineb Kirde-Itaaliast ja tänapäevased versioonid muutusid restoranides populaarseks 1960. aastate lõpust. Tiramisu on saanud üheks rahvusvaheliselt tunnustatumaks Itaalia magustoiduks ning on inspireerinud paljusid variatsioone nii kodu- kui ka professionaalses toiduvalmistamises. Nimi pärineb itaaliakeelsest sõnast tirami su, mis tähendab "ärka mind üles" või "tõsta mind rõõmuks".
+
+</value>
+  </data>
+  <data name="Risotto" xml:space="preserve">
+    <value>Kreemjas safraniriis</value>
+  </data>
+  <data name="RisottoLongDesc" xml:space="preserve">
+    <value>Milano risottost on mitu erinevat versiooni. Elizabeth Davidi sõnul oma raamatus „Itaalia toit“: „Klassikaline versioon valmistatakse lihtsalt kanapuljongist ja maitsestatakse safraniga; keetmise lõpus segatakse sisse võid ja riivitud parmesani juustu ning serveeritakse koos juustu ja võiga. Teine versioon valmistatakse veiseliha ja valge veiniga; kolmas Marsalaga. Igal juhul kasutatakse maitseainena safranit.“</value>
+  </data>
+  <data name="Lasagne" xml:space="preserve">
+    <value>Pasta, liha ja juustu kihid</value>
+  </data>
+  <data name="LasagneLongDesc" xml:space="preserve">
+    <value>Lasanje, tuntud ka mitmusevormi lasanje all, on pastatüüp, mida valmistatakse laiade ja lamedate lehtedena. See pärineb Itaalia köögist, kus seda serveeritakse mitmel viisil, sealhulgas puljongis (lasagne in brodo), kuid on tuntud eelkõige küpsetatud roa poolest, mis valmistatakse pastakihtide virnastamise teel, vaheldumisi täidistega nagu ragù (hakkliha ja tomatikaste), besamellkaste, köögiviljad, juustud (mis võivad sisaldada ricottat, mozzarellat ja parmesani) ning maitseained ja vürtsid. Tavaliselt pannakse keedetud pasta teiste koostisosadega kokku, kaetakse riivjuustuga ja seejärel küpsetatakse ahjus (al forno): selle roa piirkondlikke variatsioone leidub kogu Itaalias.</value>
+  </data>
+  <data name="Parmigiano" xml:space="preserve">
+    <value>Kõva ja teraline.</value>
+  </data>
+  <data name="ParmigianoLongDesc" xml:space="preserve">
+    <value>Parmesan (itaalia keeles Parmigiano Reggiano, hääldatakse [parmiˈdʒaːno redˈdʒaːno]) on Itaalia kõva, teraline juust, mis on valmistatud lehmapiimast ja laagerdunud vähemalt 12 kuud. See on grana-tüüpi juust, nagu ka Grana Padano, ajalooline Granone Lodigiano [it] ja teised.</value>
+  </data>
 </root>
