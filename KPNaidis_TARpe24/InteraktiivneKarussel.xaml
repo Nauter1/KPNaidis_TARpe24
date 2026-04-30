@@ -8,5 +8,66 @@
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+        <!--<Label 
+               x:Name="Lasagne"
+               Text="{Binding Lasagne}" 
+               FontSize="32"
+               HorizontalOptions="Center" />
+        <Label 
+               x:Name="LasagneLongDesc"
+               Text="{Binding LasagneLongDesc}" 
+               FontSize="32"
+               HorizontalOptions="Center" />
+        <Label 
+               x:Name="Pasta"
+               Text="{Binding Pasta}" 
+               FontSize="32"
+               HorizontalOptions="Center" />
+        <Label 
+               x:Name="PastaLongDesc"
+               Text="{Binding LasagneLongDesc}" 
+               FontSize="32"
+               HorizontalOptions="Center" />
+        <Label 
+               x:Name="Pizza"
+               Text="{Binding Pizza}" 
+               FontSize="32"
+               HorizontalOptions="Center" />
+        <Label 
+               x:Name="PizzaLongDesc"
+               Text="{Binding PizzaLongDesc}" 
+               FontSize="32"
+               HorizontalOptions="Center" />
+        <Label 
+               x:Name="Risotto"
+               Text="{Binding Risotto}" 
+               FontSize="32"
+               HorizontalOptions="Center" />
+        <Label 
+               x:Name="RisottoLongDesc"
+               Text="{Binding RisottoLongDesc}" 
+               FontSize="32"
+               HorizontalOptions="Center" />
+        <Label 
+               x:Name="Parmigiano"
+               Text="{Binding Parmigiano}" 
+               FontSize="32"
+               HorizontalOptions="Center" />
+        <Label 
+               x:Name="ParmigianoLongDesc"
+               Text="{Binding ParmigianoLongDesc}" 
+               FontSize="32"
+               HorizontalOptions="Center" />
+        <Label 
+               x:Name="Tiramisu"
+               Text="{Binding Tiramisu}" 
+               FontSize="32"
+               HorizontalOptions="Center" />
+        <Label 
+               x:Name="TiramisuLongDesc"
+               Text="{Binding TiramisuLongDesc}" 
+               FontSize="32"
+               HorizontalOptions="Center" />-->
     </VerticalStackLayout>
 </ContentPage>

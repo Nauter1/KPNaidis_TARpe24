@@ -1,10 +1,26 @@
-﻿using KPNaidis_TARpe24.Services;
+﻿using KPNaidis_TARpe24.Resources.Localization;
+using KPNaidis_TARpe24.Services;
 using System.Collections.ObjectModel;
+using System.Globalization;
+using System.Windows.Input;
 
 namespace KPNaidis_TARpe24;
 
 public partial class InteraktiivneKarussel : ContentPage
 {
+    public string Lasagne => AppResources.Lasagne;
+    public string LasagneLongDesc => AppResources.LasagneLongDesc;
+    public string Pasta => AppResources.Pasta;
+    public string PastaLongDesc => AppResources.PastaLongDesc;
+    public string Pizza => AppResources.Pizza;
+    public string PizzaLongDesc => AppResources.PizzaLongDesc;
+    public string Parmigiano => AppResources.Parmigiano;
+    public string ParmigianoLongDesc => AppResources.ParmigianoLongDesc;
+    public string Tiramisu => AppResources.Tiramisu;
+    public string TiramisuLongDesc => AppResources.TiramisuLongDesc;
+    public string Risotto => AppResources.Risotto;
+    public string RisottoLongDesc => AppResources.RisottoLongDesc;
+
     public class CarouselItem
 
     {
@@ -30,7 +46,25 @@ public partial class InteraktiivneKarussel : ContentPage
     {
 
         Title = "Karussell - Dünaamiline lisamine";
-        BackgroundColor = Colors.SteelBlue;
+
+        var lang = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+
+        if (lang == "et")
+        {
+            BackgroundColor = Colors.Green;
+        }
+        else if (lang == "en")
+        {
+            BackgroundColor = Colors.Blue;
+        }
+        else if (lang == "ru")
+        {
+            BackgroundColor = Colors.Red;
+        }
+        else
+        {
+            BackgroundColor = Colors.SteelBlue;
+        }
 
         // Initsialiseerime ObservableCollectioni
 
@@ -38,12 +72,17 @@ public partial class InteraktiivneKarussel : ContentPage
 
         {
 
-            new CarouselItem { Title = "Pasta Carbonara", ImageUrl = "https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/0346a29a89ef229b1a0ff9697184f944/Derivates/cb5051204f4a4525c8b013c16418ae2904e737b7.jpg", Description = "Classic Roman pasta dish", LongDesc = "Carbonara (Italian: [karboˈnaːra]) is a pasta dish made with cured pork, hard cheese, eggs, salt, and black pepper. It is typical of the Lazio region of Italy. The dish took its modern form and name in the middle of the 20th century." },
-            new CarouselItem { Title = "Pizza Margherita", ImageUrl = "https://content.jwplatform.com/v2/media/Bt9tKjiM/poster.jpg?width=720", Description = "Simple and delicious", LongDesc = "Pizza Margherita, also known as Margherita pizza, is, together with the pizza marinara, the typical Neapolitan pizza. It is roundish in shape with a raised edge (the cornicione) and seasoned with hand-crushed peeled tomatoes, mozzarella (buffalo mozzarella or fior di latte), fresh basil leaves, and extra virgin olive oil. The dough is made by mixing water, salt, and yeast (either sourdough, or fresh or dry baker's yeast) with flour (00 or 0)." },
-            new CarouselItem { Title = "Tiramisu", ImageUrl = "https://www.bunsenburnerbakery.com/wp-content/uploads/2016/06/easy-tiramisu-square-29-735x735.jpg", Description = "Popular coffee-flavored dessert", LongDesc = "Tiramisu is an Italian dessert made with coffee-soaked ladyfingers (savoiardi) covered with a cream of egg yolks, sugar, mascarpone, and cocoa powder. It originated in northeastern Italy, and modern versions were popularized in restaurants from the late 1960s. Tiramisu has become one of the most internationally recognised Italian desserts and has inspired many variations in home and professional cooking. The name comes from the Italian tirami su, meaning \"pick me up\" or \"cheer me up\"." },
-            new CarouselItem { Title = "Risotto alla Milanese", ImageUrl = "https://safrescobaldistatic.blob.core.windows.net/media/2022/11/RISOTTO-ALLA-MILANESE.jpg", Description = "Creamy saffron rice", LongDesc = "There are various versions of risotto alla milanese. According to Elizabeth David in her Italian Food, \"The classic one is made simply with chicken broth and flavoured with saffron; butter and grated Parmesan cheese are stirred in at the end of the cooking, and more cheese and butter served with it. The second version is made with beef marrow and white wine; a third with Marsala. In each case saffron is used as a flavouring.\"" },
-            new CarouselItem { Title = "Lasagne", ImageUrl = "https://www.safefood.net/getmedia/acad61f4-bd51-4880-8005-cd46a718e8b5/lasagne.jpg?width=1200&height=800&ext=.jpg", Description = "Layers of pasta, meat, and cheese", LongDesc = "Lasagna, also known by the plural form lasagne, is a type of pasta made in wide, flat sheets. It originates in Italian cuisine, where it is served in a number of ways, including in broth (lasagne in brodo), but is best known for its use in a baked dish made by stacking layers of pasta, alternating with fillings such as ragù (ground meats and tomato sauce), béchamel sauce, vegetables, cheeses (which may include ricotta, mozzarella, and Parmesan), and seasonings and spices. Typically, cooked pasta is assembled with the other ingredients, topped with grated cheese, and then baked in an oven (al forno): regional variations of this dish are found across Italy." },
-
+            new CarouselItem { Title = "Pasta Carbonara", ImageUrl = "https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/0346a29a89ef229b1a0ff9697184f944/Derivates/cb5051204f4a4525c8b013c16418ae2904e737b7.jpg", Description = Pasta, LongDesc = PastaLongDesc },
+            new CarouselItem { Title = "Pizza Margherita", ImageUrl = "https://content.jwplatform.com/v2/media/Bt9tKjiM/poster.jpg?width=720", Description = Pizza, LongDesc = PizzaLongDesc },
+            new CarouselItem { Title = "Tiramisu", ImageUrl = "https://www.bunsenburnerbakery.com/wp-content/uploads/2016/06/easy-tiramisu-square-29-735x735.jpg", Description = Tiramisu, LongDesc = TiramisuLongDesc },
+            new CarouselItem { Title = "Risotto alla Milanese", ImageUrl = "https://safrescobaldistatic.blob.core.windows.net/media/2022/11/RISOTTO-ALLA-MILANESE.jpg", Description = Risotto, LongDesc = RisottoLongDesc },
+            new CarouselItem { Title = "Lasagne", ImageUrl = "https://www.safefood.net/getmedia/acad61f4-bd51-4880-8005-cd46a718e8b5/lasagne.jpg?width=1200&height=800&ext=.jpg",Description = Lasagne, LongDesc = LasagneLongDesc },
+            /*            
+            new CarouselItem { Title = "Pasta Carbonara", ImageUrl = "https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/0346a29a89ef229b1a0ff9697184f944/Derivates/cb5051204f4a4525c8b013c16418ae2904e737b7.jpg", Description = Pasta.Text, LongDesc = PastaLongDesc.Text },
+            new CarouselItem { Title = "Pizza Margherita", ImageUrl = "https://content.jwplatform.com/v2/media/Bt9tKjiM/poster.jpg?width=720", Description = Pizza.Text, LongDesc = PizzaLongDesc.Text },
+            new CarouselItem { Title = "Tiramisu", ImageUrl = "https://www.bunsenburnerbakery.com/wp-content/uploads/2016/06/easy-tiramisu-square-29-735x735.jpg", Description = Tiramisu.Text, LongDesc = TiramisuLongDesc.Text },
+            new CarouselItem { Title = "Risotto alla Milanese", ImageUrl = "https://safrescobaldistatic.blob.core.windows.net/media/2022/11/RISOTTO-ALLA-MILANESE.jpg", Description = Risotto.Text, LongDesc = RisottoLongDesc.Text },
+            new CarouselItem { Title = "Lasagne", ImageUrl = "https://www.safefood.net/getmedia/acad61f4-bd51-4880-8005-cd46a718e8b5/lasagne.jpg?width=1200&height=800&ext=.jpg",Description = Lasagne.Text, LongDesc = LasagneLongDesc.Text },*/
         };
 
 
@@ -241,9 +280,8 @@ public partial class InteraktiivneKarussel : ContentPage
                 Title = "Parmigiano Reggiano",
 
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Parmigiano_Reggiano%2C_Italien%2C_Europ%C3%A4ische_Union.jpg/250px-Parmigiano_Reggiano%2C_Italien%2C_Europ%C3%A4ische_Union.jpg",
-                Description = "Hard and granular.",
-                LongDesc = "Parmesan (Italian: Parmigiano Reggiano, pronounced [parmiˈdʒaːno redˈdʒaːno]) is an Italian hard, granular cheese produced from cow's milk and aged at least 12 months. It is a grana-type cheese, along with Grana Padano, the historic Granone Lodigiano [it], and others. "
-
+                Description = Parmigiano,
+                LongDesc = ParmigianoLongDesc
             });
 
 
@@ -251,33 +289,7 @@ public partial class InteraktiivneKarussel : ContentPage
 
             carouselView.Position = items.Count - 1;
 
-        };
-
-        var langNupp = new Button
-
-        {
-
-            Text = "Vaheta keel",
-
-            BackgroundColor = Colors.DarkSlateBlue,
-
-            TextColor = Colors.White,
-
-            CornerRadius = 10,
-
-            Margin = new Thickness(0, 20, 0, 0)
-
-        };
-
-
-        // Nupu vajutamise sündmus
-
-        langNupp.Clicked += (sender, e) =>
-
-        {
-
-
-        };
+        }; 
 
 
 
@@ -299,7 +311,7 @@ public partial class InteraktiivneKarussel : ContentPage
 
         });
 
-        
+
 
 
         Content = new ScrollView
@@ -322,7 +334,7 @@ public partial class InteraktiivneKarussel : ContentPage
 
                     indicatorView,
 
-                    lisaNupp
+                    lisaNupp,
 
                 }
 
