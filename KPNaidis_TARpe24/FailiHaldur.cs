@@ -9,7 +9,7 @@ namespace KPNaidis_TARpe24;
 public static class FailiHaldur
 {
     // Leiame telefoni süsteemis turvalise koha faili hoidmiseks
-    static string failiPesa = Path.Combine(FileSystem.AppDataDirectory, "vaatamisvaarsused.txt");
+    static string failiPesa = Path.Combine(FileSystem.AppDataDirectory, "retseptid.txt");
 
     public static void Salvesta(string nimi, string kategooria, string pildilink)
     {
@@ -36,7 +36,7 @@ public static class FailiHaldur
                     // Nüüd kontrollime, et meil oleks kindlasti 3 osa (Nimi, Kategooria, Pilt)
                     if (osad.Length >= 3)
                     {
-                        nimekiri.Add(new Retsept { Nimi = osad[0], Kategooria = osad[1], PildiLink = osad[2] });
+                        nimekiri.Add(new Retsept { Nimi = osad[0], Kategooria = osad[1], Pildilink = osad[2] });
                     }
                 }
                 catch (Exception ex)

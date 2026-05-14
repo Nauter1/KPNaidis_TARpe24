@@ -108,6 +108,9 @@
 	  <MauiXaml Update="PopupPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="RetseptAddPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="RetseptPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

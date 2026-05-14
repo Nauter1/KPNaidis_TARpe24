@@ -3,12 +3,12 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
 using System.Windows.Input;
-using static KPNaidis_TARpe24.RiikValik;
 
 namespace KPNaidis_TARpe24;
 
-public partial class RetseptPage : ContentPage
+public partial class RetseptAddPage : ContentPage
 {
+    
     private readonly string _failiTee;
     Entry entryNimi, entryKategooria, entryPildilink;
     string valitudPildiTee = "";
@@ -17,8 +17,8 @@ public partial class RetseptPage : ContentPage
     public ICommand KustutaCommand { get; }
     public ObservableCollection<Retsept> Recipes { get; set; } = new();
     ListView list;
-    public RetseptPage()
-	{
+    public RetseptAddPage()
+    {
         this.Title = "Riikide haldus";
 
         // 1. SISESTUSVÄLJAD
@@ -46,52 +46,6 @@ public partial class RetseptPage : ContentPage
         KustutaCommand = new Command<Retsept>(KustutaTermin);*/
 
         LaeAndmed();
-        list = new ListView
-        {
-            HasUnevenRows = true,
-            ItemsSource = Recipes,
-            SelectionMode = ListViewSelectionMode.Single
-        };
-
-        //list.ItemTapped += List_ItemTapped;
-
-        list.ItemTemplate = new DataTemplate(() =>
-        {
-            // Pildi element
-            Image imgPilt = new Image
-            {
-                HeightRequest = 50,
-                WidthRequest = 50,
-                Aspect = Aspect.AspectFit,
-                VerticalOptions = LayoutOptions.Center,
-                Margin = new Thickness(0, 0, 10, 0) // Veeris paremal
-            };
-            imgPilt.SetBinding(Image.SourceProperty, "Pildilink");
-
-            // Tekstide elemendid
-            Label lblNimetus = new Label { FontSize = 18, FontAttributes = FontAttributes.Bold };
-            lblNimetus.SetBinding(Label.TextProperty, "Nimi");
-
-            Label lblTootja = new Label { TextColor = Colors.Gray };
-            lblTootja.SetBinding(Label.TextProperty, "Kategooria");
-
-            var textLayout = new StackLayout
-            {
-                Orientation = StackOrientation.Vertical,
-                VerticalOptions = LayoutOptions.Center,
-                Children = { lblNimetus, lblTootja }
-            };
-
-            // Kogu rea paigutus (Pilt vasakul, tekst paremal)
-            var rowLayout = new StackLayout
-            {
-                Orientation = StackOrientation.Horizontal,
-                Padding = new Thickness(10),
-                Children = { imgPilt, textLayout }
-            };
-
-            return new ViewCell { View = rowLayout };
-        });
 
         // Määrame TableView lehe peamiseks sisuks
         Content = new VerticalStackLayout
@@ -105,14 +59,12 @@ public partial class RetseptPage : ContentPage
                     TextColor = Colors.Black,
                     HorizontalOptions = LayoutOptions.Center
                 },
-                    //entryNimi,
-                    //entryKategooria,
-                    //entryPildilink,
-                    //btnValiPilt,   // Uus nupp galerii jaoks
-                    //lblValitudPilt, // Tagasiside silt
-                    //btnLisa,
-                    btnKustuta,
-                    list
+                    entryNimi,
+                    entryKategooria,
+                    entryPildilink,
+                    btnValiPilt,   // Uus nupp galerii jaoks
+                    lblValitudPilt, // Tagasiside silt
+                    btnLisa,
 
             }
         };
