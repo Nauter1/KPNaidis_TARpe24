@@ -36,9 +36,6 @@ public partial class RetseptPage : ContentPage
         // Määrame turvalise asukoha, kuhu fail salvestatakse
         _failiTee = Path.Combine(FileSystem.AppDataDirectory, "retseptid.json");
 
-        Button btnLisa = new Button { Text = "Lisa riik", BackgroundColor = Colors.LightGreen };
-        btnLisa.Clicked += LisaTermin;
-
         Button btnKustuta = new Button { Text = "Kustuta valitud riik", BackgroundColor = Colors.LightPink };
         btnKustuta.Clicked += Kustuta_Clicked;
 
@@ -53,7 +50,7 @@ public partial class RetseptPage : ContentPage
             SelectionMode = ListViewSelectionMode.Single
         };
 
-        //list.ItemTapped += List_ItemTapped;
+        list.ItemTapped += List_ItemTapped;
 
         list.ItemTemplate = new DataTemplate(() =>
         {
@@ -75,11 +72,14 @@ public partial class RetseptPage : ContentPage
             Label lblTootja = new Label { TextColor = Colors.Gray };
             lblTootja.SetBinding(Label.TextProperty, "Kategooria");
 
+            Label lblSelgitus = new Label { TextColor = Colors.Gray };
+            lblSelgitus.SetBinding(Label.TextProperty, "Selgitus");
+
             var textLayout = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,
                 VerticalOptions = LayoutOptions.Center,
-                Children = { lblNimetus, lblTootja }
+                Children = { lblNimetus, lblTootja, lblSelgitus }
             };
 
             // Kogu rea paigutus (Pilt vasakul, tekst paremal)
@@ -134,47 +134,6 @@ public partial class RetseptPage : ContentPage
         {
             await DisplayAlert("Viga", "Pildi valimine ebaõnnestus: " + ex.Message, "OK");
         }
-    }
-
-    private async void LisaTermin(object sender, EventArgs e)
-    {
-        // Kontrollime, et väljad poleks tühjad
-        if (string.IsNullOrWhiteSpace(entryNimi.Text) || string.IsNullOrWhiteSpace(entryKategooria.Text))
-            return;
-
-        if (valitudPildiTee != "")
-        {
-            var uusItem = new Retsept
-            {
-                Nimi = entryNimi.Text,
-                Kategooria = entryKategooria.Text,
-                Pildilink = valitudPildiTee
-            };
-            Recipes.Add(uusItem);
-        }
-        else if (string.IsNullOrWhiteSpace(entryPildilink.Text))
-        {
-            var uusItem = new Retsept
-            {
-                Nimi = entryNimi.Text,
-                Kategooria = entryKategooria.Text,
-                Pildilink = valitudPildiTee
-            };
-            Recipes.Add(uusItem);
-        }
-
-
-        // Paneme programmi kuulama, kui selle termini märkeruutu vajutatakse
-
-
-
-        // Tühjendame tekstikastid
-        entryNimi.Text = string.Empty;
-        entryKategooria.Text = string.Empty;
-        entryPildilink.Text = string.Empty;
-        valitudPildiTee = string.Empty;
-
-        SalvestaAndmed();
     }
 
     private void KustutaTermin(Retsept item)
@@ -234,5 +193,14 @@ public partial class RetseptPage : ContentPage
     protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+    private async void List_ItemTapped(object sender, ItemTappedEventArgs e)
+    {
+        Retsept valitudRiik = e.Item as Retsept;
+
+        if (valitudRiik != null)
+        {
+            await DisplayAlert("Info", $"Retsept: {valitudRiik.Nimi}\nKategooria: {valitudRiik.Kategooria}\nSelgitus: {valitudRiik.Selgitus}", "Sulge");
+        }
     }
 }

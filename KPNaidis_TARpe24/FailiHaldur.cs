@@ -34,9 +34,9 @@ public static class FailiHaldur
 
                     string[] osad = rida.Split(';');
                     // Nüüd kontrollime, et meil oleks kindlasti 3 osa (Nimi, Kategooria, Pilt)
-                    if (osad.Length >= 3)
+                    if (osad.Length >= 4)
                     {
-                        nimekiri.Add(new Retsept { Nimi = osad[0], Kategooria = osad[1], Pildilink = osad[2] });
+                        nimekiri.Add(new Retsept { Nimi = osad[0], Selgitus = osad[1] , /*Kategooria = osad[2],*/ Pildilink = osad[3] });
                     }
                 }
                 catch (Exception ex)

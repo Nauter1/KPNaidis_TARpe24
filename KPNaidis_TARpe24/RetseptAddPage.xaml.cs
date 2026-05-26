@@ -10,7 +10,8 @@ public partial class RetseptAddPage : ContentPage
 {
     
     private readonly string _failiTee;
-    Entry entryNimi, entryKategooria, entryPildilink;
+    Entry entryNimi, entrySelgitus, entryPildilink;
+    Picker entryKategooria;
     string valitudPildiTee = "";
     Label lblValitudPilt;
     public ICommand LisaCommand { get; }
@@ -19,11 +20,19 @@ public partial class RetseptAddPage : ContentPage
     ListView list;
     public RetseptAddPage()
     {
-        this.Title = "Riikide haldus";
+        this.Title = "Retsepti haldus";
 
         // 1. SISESTUSVÄLJAD
         entryNimi = new Entry { Placeholder = "Nimi" };
-        entryKategooria = new Entry { Placeholder = "Kategooria" };
+        entryKategooria = new Picker
+        {
+            Title = "Kategooria",
+            ItemsSource = Enum.GetValues(typeof(RetseptKategooria))
+                      .Cast<RetseptKategooria>()
+                      .ToList(),
+            HorizontalOptions = LayoutOptions.Center
+        };
+        entrySelgitus = new Entry { Placeholder = "Selgitus" };
         entryPildilink = new Entry { Placeholder = "Pildi link" };
 
         // 2. PILDI VALIMISE KONTROLLID
@@ -36,7 +45,7 @@ public partial class RetseptAddPage : ContentPage
         // Määrame turvalise asukoha, kuhu fail salvestatakse
         _failiTee = Path.Combine(FileSystem.AppDataDirectory, "retseptid.json");
 
-        Button btnLisa = new Button { Text = "Lisa riik", BackgroundColor = Colors.LightGreen };
+        Button btnLisa = new Button { Text = "Lisa retsept", BackgroundColor = Colors.LightGreen };
         btnLisa.Clicked += LisaTermin;
 
         Button btnKustuta = new Button { Text = "Kustuta valitud riik", BackgroundColor = Colors.LightPink };
@@ -53,7 +62,7 @@ public partial class RetseptAddPage : ContentPage
             Children = {
                 new Label
                 {
-                    Text = "Riigid!",
+                    Text = "Retseptid!",
                     FontSize = 36,
                     FontFamily = "Digital System 400",
                     TextColor = Colors.Black,
@@ -61,6 +70,7 @@ public partial class RetseptAddPage : ContentPage
                 },
                     entryNimi,
                     entryKategooria,
+                    entrySelgitus,
                     entryPildilink,
                     btnValiPilt,   // Uus nupp galerii jaoks
                     lblValitudPilt, // Tagasiside silt
@@ -91,7 +101,7 @@ public partial class RetseptAddPage : ContentPage
     private async void LisaTermin(object sender, EventArgs e)
     {
         // Kontrollime, et väljad poleks tühjad
-        if (string.IsNullOrWhiteSpace(entryNimi.Text) || string.IsNullOrWhiteSpace(entryKategooria.Text))
+        if (string.IsNullOrWhiteSpace(entryNimi.Text) || entryKategooria.SelectedItem == null)
             return;
 
         if (valitudPildiTee != "")
@@ -99,7 +109,8 @@ public partial class RetseptAddPage : ContentPage
             var uusItem = new Retsept
             {
                 Nimi = entryNimi.Text,
-                Kategooria = entryKategooria.Text,
+                Selgitus = entrySelgitus.Text,
+                Kategooria = entryKategooria.SelectedItem.ToString(),
                 Pildilink = valitudPildiTee
             };
             Recipes.Add(uusItem);
@@ -109,7 +120,8 @@ public partial class RetseptAddPage : ContentPage
             var uusItem = new Retsept
             {
                 Nimi = entryNimi.Text,
-                Kategooria = entryKategooria.Text,
+                Selgitus = entrySelgitus.Text,
+                Kategooria = entryKategooria.SelectedItem.ToString(),
                 Pildilink = valitudPildiTee
             };
             Recipes.Add(uusItem);
@@ -122,7 +134,7 @@ public partial class RetseptAddPage : ContentPage
 
         // Tühjendame tekstikastid
         entryNimi.Text = string.Empty;
-        entryKategooria.Text = string.Empty;
+        entryKategooria.SelectedItem = null;
         entryPildilink.Text = string.Empty;
         valitudPildiTee = string.Empty;
 

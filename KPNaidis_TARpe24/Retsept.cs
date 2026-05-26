@@ -9,6 +9,7 @@ namespace KPNaidis_TARpe24
     public class Retsept
     {
         private string _nimi;
+        private string kategooria;
         private string _selgitus;
         private string _pildilink;
 
@@ -23,6 +24,12 @@ namespace KPNaidis_TARpe24
         }
 
         public string Kategooria
+        {
+            get => kategooria;
+            set { kategooria = value; OnPropertyChanged(); }
+        }
+
+        public string Selgitus
         {
             get => _selgitus;
             set { _selgitus = value; OnPropertyChanged(); }
