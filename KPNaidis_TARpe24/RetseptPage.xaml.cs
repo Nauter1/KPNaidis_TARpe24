@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
 using System.Windows.Input;
-using static KPNaidis_TARpe24.RiikValik;
 
 namespace KPNaidis_TARpe24;
 
@@ -19,7 +18,7 @@ public partial class RetseptPage : ContentPage
     ListView list;
     public RetseptPage()
 	{
-        this.Title = "Riikide haldus";
+        this.Title = "Retsepti haldus";
 
         // 1. SISESTUSVÄLJAD
         entryNimi = new Entry { Placeholder = "Nimi" };
@@ -36,8 +35,19 @@ public partial class RetseptPage : ContentPage
         // Määrame turvalise asukoha, kuhu fail salvestatakse
         _failiTee = Path.Combine(FileSystem.AppDataDirectory, "retseptid.json");
 
-        Button btnKustuta = new Button { Text = "Kustuta valitud riik", BackgroundColor = Colors.LightPink };
+        Button btnKustuta = new Button { Text = "Kustuta valitud retsept", BackgroundColor = Colors.LightPink };
         btnKustuta.Clicked += Kustuta_Clicked;
+
+        Button btnReload = new Button
+        {
+            Text = "Uuenda nimekiri",
+            BackgroundColor = Colors.LightBlue
+        };
+
+        btnReload.Clicked += (s, e) =>
+        {
+            LaeAndmed();
+        };
 
         /*LisaCommand = new Command(LisaTermin);
         KustutaCommand = new Command<Retsept>(KustutaTermin);*/
@@ -99,7 +109,7 @@ public partial class RetseptPage : ContentPage
             Children = {
                 new Label
                 {
-                    Text = "Riigid!",
+                    Text = "Retseptid!",
                     FontSize = 36,
                     FontFamily = "Digital System 400",
                     TextColor = Colors.Black,
@@ -111,6 +121,7 @@ public partial class RetseptPage : ContentPage
                     //btnValiPilt,   // Uus nupp galerii jaoks
                     //lblValitudPilt, // Tagasiside silt
                     //btnLisa,
+                    btnReload,
                     btnKustuta,
                     list
 

@@ -4,8 +4,8 @@ public partial class StartPage : ContentPage
 {
 	VerticalStackLayout vst;
 	ScrollView sv;
-	public List<ContentPage> Lehed = new List<ContentPage>() { new LanguageSwap(), new TextPage(), new FigurePage(), new Timer_Page(), new ValgusFoorPage(), new DateTimePage(), new StepperSliderPage(), new RGBSlider(), new Snowman(), new PopupPage(), new PickerImagePage(), new TripsTrapsTrull(), new KontaktAndmed(), new DynamicList(), new RiikValik(), new KarusselPages(), new InteraktiivneKarussel(), new MaluMang(), new RetseptPage(), new RetseptAddPage() };
-	public List<string> LeheNimed = new List<string>() { "LanguageSwap","Tekst", "Kujund", "Timer", "Foor", "DateTime", "Stepper", "RGB Slider", "Snowman", "PopUp", "Grid", "Trips-Traps-Trull", "Kontakt Andmed", "Dynamic List", "Riik Valik", "KarusselPages", "InteraktiivneKarussel", "Mälumäng", "RetseptPage", "LisaRetsept" };
+	public List<Page> Lehed = new List<Page>() { new LanguageSwap(), new TextPage(), new FigurePage(), new Timer_Page(), new ValgusFoorPage(), new DateTimePage(), new StepperSliderPage(), new RGBSlider(), new Snowman(), new PopupPage(), new PickerImagePage(), new TripsTrapsTrull(), new KontaktAndmed(), new DynamicList(), new RiikValik(), new KarusselPages(), new InteraktiivneKarussel(), new MaluMang(), new MainTabbedPage() };
+	public List<string> LeheNimed = new List<string>() { "LanguageSwap","Tekst", "Kujund", "Timer", "Foor", "DateTime", "Stepper", "RGB Slider", "Snowman", "PopUp", "Grid", "Trips-Traps-Trull", "Kontakt Andmed", "Dynamic List", "Riik Valik", "KarusselPages", "InteraktiivneKarussel", "Mälumäng", "RetseptPage"};
 	public StartPage()
 	{
 		// Title = "Avaleht";
@@ -27,7 +27,12 @@ public partial class StartPage : ContentPage
 			nupp.Clicked += (sender, e) =>
 			{
 				var valik = Lehed[nupp.ZIndex];
-				Navigation.PushAsync(valik);
+                if (valik is TabbedPage)
+                {
+                    Application.Current.MainPage = valik;
+                }
+				else
+					Navigation.PushAsync(valik);
 			};
 		}
 		Button nulliNupp = new Button
